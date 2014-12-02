@@ -1,4 +1,5 @@
-Linux: ![travis](https://travis-ci.org/ropensci/chromer.png) 
+Linux: ![travis](https://travis-ci.org/ropensci/chromer.png)   
+[![Build status](https://ci.appveyor.com/api/projects/status/b1xjatd4i1gx1o6n?svg=true)](https://ci.appveyor.com/project/karthik/chromer)
 
 chromer
 =======
