@@ -9,13 +9,13 @@ This package provides programmatic access to the [Chromosome Counts Database (CC
 This is currently only on GitHub so the best way to install is with [devtools](http://github.com/hadley/devtools)
 ```r
 ## install.packages("devtools")
-devtools::install_github("ropensci/cromer")
+devtools::install_github("ropensci/chromer")
 ```
 
 ## Usage
 It is possible to query the database in three ways: by `genus`, `family`, and `majorGroup`. For example, if we are interested in the genus *Solanum* (Solanaceae), which contains the potato, tomato, and eggplant, we would query the database as follows
 ```r
-library(cromer)
+library(chromer)
 sol_dat <- chrom_counts(taxa="Solanum", rank="genus")
 nrow(sol_dat)
 ```
