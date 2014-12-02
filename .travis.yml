@@ -15,3 +15,7 @@ script: ./travis-tool.sh run_tests
 
 on_failure:
   - ./travis-tool.sh dump_logs
+
+notifications:
+  slack:
+    secure: Cc7d5WF0iixUX3100ysaaw+RqvKTrTVfw3mCaxiLe5vLl1FxraePUg8NX+E4JaftKF8x9JkWWdUWbj1l32i3QRaEUZeQdJ2mrGrUv+bDxQgpH/gm+5RCqSFJpWivEs15arp4wrHEA5iUSXrJc/DlEF6+gpGVP4XyF0nP3bgA3Y8=
