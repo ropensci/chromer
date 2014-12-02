@@ -2,7 +2,7 @@ Package: chromer
 Title: R interface for Chromosome Counts Database (CCDB)
 Version: 0.1
 Date: 2014-12-01
-Authors: Matthew Pennell
+Authors@R: "Matthew Pennell <mwpennell@gmail.com> [aut, cre]"
 Maintainer: Matthew Pennell <mwpennell@gmail.com>
 Description: A programmatic interface to the Chromosome Counts Data
     (http://ccdb.tau.ac.il/). This package is part of the rOpenSci suite
@@ -12,7 +12,7 @@ Depends:
 Imports:
     httr,
     data.table,
-    rjson
+    jsonlite
 URL: http://www.github.com/ropensci/chromer
 BugReports: http://www.github.com/ropensci/chromer/issues/new
 License: CC0
