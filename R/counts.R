@@ -2,7 +2,7 @@
 #'
 #' This function calls the Chromsome Counts Database (CCDB) API and returns all counts for specified higher taxa.
 #'
-#' @param taxa Taxonomic rank to query. Only a single query can be made by this function.
+#' @param taxa Taxonomic name(s) to query. Can be either a single name, a vector of multiple names or a list. If supplying multiple names, these must all be of the same \code{rank}.
 #'
 #' @param rank Rank to query. Must be either 'genus', 'family', or 'majorGroup'
 #'
@@ -12,62 +12,61 @@
 #'
 #' @return A \code{data.frame} containing all records matched by query
 #'
-#' @import rjson
+#' @import jsonlite
 #' @importFrom httr GET content stop_for_status
 #' @importFrom data.table rbindlist
 #' 
-#' @export chrom_counts_rank
+#' @export chrom_counts
 #'
 #' @examples \dontrun{
 #' 
 #' ## Get all counts for genus Castilleja
-#' chrom_counts_rank("Castilleja", "genus")
+#' chrom_counts("Castilleja", "genus")
+#'
+#' ## Get all counts for both Castilleja and Lachemilla
+#' chrom_counts(c("Castilleja", "Lachemilla"), "genus")
+#' 
 #' 
 #' }
-chrom_counts_rank <-  function(taxa, rank=c("genus", "family", "majorGroup"),
+chrom_counts <-  function(taxa, rank=c("genus", "family", "majorGroup"),
                                full=FALSE, foptions=list()){
-        
-    out <- suppressWarnings(check_ccdb_input(taxa, rank, full))
+
+    out <- suppressWarnings(check_ccdb_input(rank, full))
+    l   <- lapply(taxa, function(x)
+                chrom_counts_single(x, rank, out, foptions=foptions))
+    res <- data.frame(rbindlist(l))
+    ## return null values if nothing
+    if (nrow(res) == 0){
+        return(NULL)
+    } else {
+        return(res)
+    }
+}
+
+## Internal function to do the individual queries
+chrom_counts_single <- function(taxa, rank, out, foptions){
+    
     url <- paste0("http://ccdb.tau.ac.il/services/",
                   out,"/?", rank,"=",taxa,"&format=","json")
 
     counts_call <- GET(url, foptions)
     stop_for_status(counts_call)
-    counts_data_json <- content(counts_call)
+    counts_data_json <- content(counts_call, as="text")
+    counts_data <- jsonlite::fromJSON(counts_data_json)
 
-    if (length(counts_data_json) == 0){
-        counts_data <- data.frame()
+    if (length(counts_data) == 0){
+        return(NULL)
     } else {
-        ## N.B.: hack to replace all NULL values with NA
-        ## Probably can speed this up substantially
-        counts_data_mod <- lapply(counts_data_json, nullmask_json)
-        
-        counts_data <- data.frame(rbindlist(counts_data_mod))
-
-        ## modify species name & add a column
-        ## Also could be potentially sped up with dplyr
         counts_data$species <- sapply(counts_data$resolved_name_full,
                                       short_species_name)
-        
+        return(counts_data)
     }
-
-   if (nrow(counts_data) == 0){
-       NULL
-   } else {
-       counts_data
-   }
 }
 
 
 ## Utility function for checking input
-check_ccdb_input <- function(taxa, rank, full){
-
-    if (!inherits(taxa, "character"))
-        stop("taxa must be input as a character")
-
-    if (length(taxa) != 1)
-        stop("Only a single taxa call can be supplied")
-
+check_ccdb_input <- function(rank, full){
+        
     if (length(rank) != 1 | !rank %in% c("genus", "family", "majorGroup"))
         stop("Specify a single taxonomic rank. Options are 'genus', 'family', and 'majorGroup'.")
 
@@ -77,14 +76,6 @@ check_ccdb_input <- function(taxa, rank, full){
         output <- "countsPartial"
     }
     output
-}
-
-
-## Utility function for converting NULL to NA
-nullmask_json <- function(x){
-    nullmask    <- unlist(lapply(x, is.null))
-    x[nullmask] <- NA
-    x
 }
 
 

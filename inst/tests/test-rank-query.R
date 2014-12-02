@@ -2,9 +2,9 @@ source("helper-chromer.R")
 
 context("Texting rank-based query")
 
-## Query for genus Castilleja for testing purposes
-cp <- chrom_counts_rank(taxa="Castilleja", rank="genus", full=FALSE)
-cf <- chrom_counts_rank(taxa="Castilleja", rank="genus", full=TRUE)
+## Query for genus Lachemilla for testing purposes
+cp <- chrom_counts(taxa="Lachemilla", rank="genus", full=FALSE)
+cf <- chrom_counts(taxa="Lachemilla", rank="genus", full=TRUE)
 
 ## Call function for making short species name
 short_species_name <- chromer:::short_species_name
@@ -30,23 +30,36 @@ test_that("Main function returns the correct format", {
 
 test_that("No match returns null", {
 
-    dum <- chrom_counts_rank(taxa="Notagenus", rank="genus")
+    dum <- chrom_counts(taxa="Notagenus", rank="genus")
     expect_that(dum, equals(NULL))
 })
 
+
+test_that("Querying multiple taxa works", {
+
+    mp <- chrom_counts(taxa=c("Lachemilla", "Lachemilla"), rank="genus",
+                       full=FALSE)
+    expect_that(mp, is_a("data.frame"))
+    expect_that(nrow(mp), equals(2*nrow(cp)))
+    mp <- chrom_counts(taxa=list("Lachemilla", "Lachemilla"), rank="genus",
+                       full=FALSE)
+    expect_that(mp, is_a("data.frame"))
+    expect_that(nrow(mp), equals(2*nrow(cp)))
+})
+    
 
 test_that("Query worked properly", {
 
     ## Full records
     gen <- unique(cf$genus)
     fam <- unique(cf$family)
-    expect_that(gen, equals("Castilleja"))
-    expect_that(fam, equals("Orobanchaceae"))
+    expect_that(gen, equals("Lachemilla"))
+    expect_that(fam, equals("Rosaceae"))
 
     ## Partial records
     gen <- unique(sapply(cp$species, function(x)
                          {strsplit(x, split="_")[[1]][1]}))
-    expect_that(gen, equals("Castilleja"))
+    expect_that(gen, equals("Lachemilla"))
 
 })
 
@@ -78,11 +91,10 @@ test_that("Building species name worked properly",{
 
 test_that("Bad input throws error", {
 
-    expect_that(chrom_counts_rank("foo", c("genus", "family")),
+    expect_that(chrom_counts("foo", c("genus", "family")),
                 throws_error())
-    expect_that(chrom_counts_rank("foo", "foo"), throws_error())
-    expect_that(chrom_counts_rank(c("foo", "dum"), "genus"), throws_error())
-    expect_that(chrom_counts_rank(list("foo"), "genus"), throws_error())
+    expect_that(chrom_counts("foo", "foo"), throws_error())
+
 })
     
     
