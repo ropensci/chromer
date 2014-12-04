@@ -1,5 +1,5 @@
 Package: chromer
-Title: R interface for Chromosome Counts Database (CCDB)
+Title: Interface to Chromosome Counts Database API
 Version: 0.1
 Date: 2014-12-01
 Authors@R: "Matthew Pennell <mwpennell@gmail.com> [aut, cre]"
