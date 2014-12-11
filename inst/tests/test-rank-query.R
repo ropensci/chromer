@@ -13,25 +13,17 @@ test_that("Main function returns the correct format", {
 
     expect_that(cp, is_a("data.frame"))
     expect_that(cf, is_a("data.frame"))
-    expect_equal(ncol(cp), 6)
+    expect_equal(ncol(cp), 4)
     expect_equal(ncol(cf), 15)
     expect_equal(nrow(cp), nrow(cf))
 
-    colp <- c("resolved_name_full", "matched_name", "count_n_orig",
-              "count_2n_orig", "reference", "species")
-    expect_that(colnames(cp), equals(colp))
-
-    colf <- c("source", "id", "internal_id", "family", "genus",
-              "count_n_orig", "count_2n_orig", "reference", "name_to_resolve",
-              "matched_name", "resolved_name_full", "major_group",
-              "status", "voucher", "species")
-    expect_that(colnames(cf), equals(colf))
 })
 
-test_that("No match returns null", {
+test_that("No match returns empty data frame", {
 
     dum <- chrom_counts(taxa="Notagenus", rank="genus")
-    expect_that(dum, equals(NULL))
+    expect_that(nrow(dum), equals(0))
+    expect_that(ncol(dum), equals(0))
 })
 
 
@@ -57,7 +49,7 @@ test_that("Query worked properly", {
     expect_that(fam, equals("Rosaceae"))
 
     ## Partial records
-    gen <- unique(sapply(cp$species, function(x)
+    gen <- unique(sapply(cp$resolved_binomial, function(x)
                          {strsplit(x, split="_")[[1]][1]}))
     expect_that(gen, equals("Lachemilla"))
 
@@ -65,11 +57,11 @@ test_that("Query worked properly", {
 
 test_that("Building species name worked properly",{
 
-    spf <- cf$species
-    spp <- cp$species
+    spf <- cf$resolved_binomial
+    spp <- cp$resolved_binomial
     expect_that(spf, equals(spp))
 
-    sp_tmp <- cf$resolved_name_full[1]
+    sp_tmp <- cf$resolved_name[1]
     expect_that(short_species_name(sp_tmp), equals(spf[1]))
 
     ## Make sure strsplit is working properly

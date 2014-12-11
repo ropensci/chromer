@@ -3,23 +3,30 @@
 \alias{chrom_counts}
 \title{Returns chromosome counts from Chromosome Counts Database API}
 \usage{
-chrom_counts(taxa, rank = c("genus", "family", "majorGroup"), full = FALSE,
-  foptions = list())
+chrom_counts(taxa, rank = c("species", "genus", "family", "majorGroup"),
+  full = FALSE, foptions = list())
 }
 \arguments{
 \item{taxa}{Taxonomic name(s) to query. Can be either a single name, a vector of multiple names or a list. If supplying multiple names, these must all be of the same \code{rank}.}
 
-\item{rank}{Rank to query. Must be either 'genus', 'family', or 'majorGroup'}
+\item{rank}{Rank to query. Must be either \code{"species"}, \code{"genus"}, \code{"family"}, or \code{"majorGroup"}}
 
 \item{full}{Logical. Whether to return full records. Defaults to \code{FALSE} which returns only partial records. Partial records includes the resolved name as well as the gametophytic (n) and sporophytic (2n) counts.}
 
-\item{foptions}{additional options to be passed to \code{GET}}
+\item{foptions}{additional options to be passed to \code{httr::GET}}
 }
 \value{
 A \code{data.frame} containing all records matched by query
 }
 \description{
 This function calls the Chromsome Counts Database (CCDB) API and returns all counts for specified higher taxa.
+}
+\details{
+When using the API to query for species, both matched names and resolved names are searched. This means that all records for potential synonyms will be returned as well. Currently species binomials must be specified by 'genus species' (i.e., space between genus and species).
+
+To search for subspecies (subsp.) or varieties (var.), you can use search terms like \code{"Solanum acaule var. albicans"}. Searching for \code{"Solanum acaule"} will return all subspecies and varieties.
+
+Currently the only acceptable search terms when specifying \code{"majorGroup"} are \code{"Angiosperms"}, \code{"Gymnosperms"}, \code{"Pteridophytes"}, or \code{"Bryophytes"}.
 }
 \examples{
 \dontrun{
@@ -30,6 +37,17 @@ chrom_counts("Castilleja", "genus")
 ## Get all counts for both Castilleja and Lachemilla
 chrom_counts(c("Castilleja", "Lachemilla"), "genus")
 
+## Get all counts for Castilleja miniata
+chrom_counts("Castilleja miniata", "species")
+
+## Get all counts for only Castilleja miniata subsp. elata
+chrom_counts("Castilleja miniata subsp. elata", "species")
+
+## Note that searching for "Castilleja miniata" will return
+## all subspecies and varieties
+
+## Get all counts for the Orobanchaceae
+chrom_counts("Orobanchaceae", "family")
 
 }
 }
