@@ -13,33 +13,37 @@ devtools::install_github("ropensci/chromer")
 ```
 
 ## Usage
-It is possible to query the database in three ways: by `genus`, `family`, and `majorGroup`. For example, if we are interested in the genus *Solanum* (Solanaceae), which contains the potato, tomato, and eggplant, we would query the database as follows
+It is possible to query the database in three ways: by `species`, `genus`, `family`, and `majorGroup`. For example, if we are interested in the genus *Solanum* (Solanaceae), which contains the potato, tomato, and eggplant, we would query the database as follows
 ```r
 library(chromer)
-sol_dat <- chrom_counts(taxa="Solanum", rank="genus")
-nrow(sol_dat)
+sol_gen <- chrom_counts(taxa="Solanum", rank="genus")
+head(sol_gen)
+nrow(sol_gen)
 ```
-There are over 3000 records for Solanum alone! We can then subset this by species or by records with particular chromosome counts. For example, using [dplyr](http://github.com/hadley/dplyr), we can get all records for tomatoes
+There are over 3000 records for Solanum alone! If we are interested in a particular species, such as tomatoes, we can search for the species directly. 
 ```r
-## install.packages("dplyr")
-library(dplyr)
-filter(sol_dat, species == "Solanum_lycopersicum")
+sol_tom <- chrom_counts(taxa="Solanum_lycopersicum", rank="species")
+head(sol_tom)
 ```
 
 If we wanted to get data on the whole family, we simply type
 ```r
 sol_fam <- chrom_counts(taxa="Solanaceae", rank="family")
+head(sol_fam)
 ```
 Or, expand the scope much further and get all Angiosperms (this will take some time)
 ```r
-ang_dat <- chrom_counts(taxa="Angiosperms", rank="majorGroup")
+ang <- chrom_counts(taxa="Angiosperms", rank="majorGroup")
+head(ang)
 ```
 
-There are two options for returning data. The first (default) is to only return the species name information (including taxonomic resolutions made by [Taxonome](http://taxonome.bitbucket.org/)), the haploid and diploid counts and the reference (where available). Setting the argument `full=TRUE`
+There are two options for returning data. The first (default) is to only return the species name information (including taxonomic resolutions made by [Taxonome](http://taxonome.bitbucket.org/)) and the haploid and diploid counts. Setting the argument `full=TRUE`
 ```r
-sol_dat_full <- chrom_counts("Solanum", rank="genus", full=TRUE)
+sol_gen_full <- chrom_counts("Solanum", rank="genus", full=TRUE)
 ```
 returns a bunch more info on the records.
-
+```r
+head(sol_gen_full)
+```
 
 [![ropensci footer](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
