@@ -11,8 +11,7 @@ Depends:
     R (>= 2.15)
 Imports:
     httr,
-    data.table,
-    jsonlite
+    data.table
 URL: http://www.github.com/ropensci/chromer
 BugReports: http://www.github.com/ropensci/chromer/issues/new
 License: CC0
