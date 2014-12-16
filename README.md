@@ -12,7 +12,8 @@ This is currently only on GitHub so the best way to install is with [devtools](h
 devtools::install_github("ropensci/chromer")
 ```
 
-## Usage
+## Querying the CCDB
+
 It is possible to query the database in three ways: by `species`, `genus`, `family`, and `majorGroup`. For example, if we are interested in the genus *Solanum* (Solanaceae), which contains the potato, tomato, and eggplant, we would query the database as follows
 ```r
 library(chromer)
@@ -25,6 +26,7 @@ There are over 3000 records for Solanum alone! If we are interested in a particu
 sol_tom <- chrom_counts(taxa="Solanum_lycopersicum", rank="species")
 head(sol_tom)
 ```
+Note that `taxa="Solanum lycopersicum"` (including a space between the genus and species name) will also work here.
 
 If we wanted to get data on the whole family, we simply type
 ```r
@@ -45,5 +47,17 @@ returns a bunch more info on the records.
 ```r
 head(sol_gen_full)
 ```
+
+## Summarizing the data
+
+The Chromosome Counts Database is a fantastic resource but as it is a compilation of a large number of resources and studies, the data is somewhat messy and challenging to work with. We have written a little function that does some post-processing to make it easier to handle. The function `summarize_counts()` does the following:
+1. Aggregates multiple records for the same species
+2. Infers the gametophytic (haploid) number of chromosomes when only the sporophytic (diploid) counts are available.
+3. Parses the records for numeric values. In some cases chromosomal counts also include text characters (e.g., #-#; c.#; #,#,#; and many other varieties). As there are many possible ways that chromosomal counts may be listed in the database, the function takes the naive approach and simply searches the strings for integers. In most cases, this is sensible but may produces weird results on occasion. **Some degree of manual curation will probably be necessary and the output of the summary could be used with caution**.
+
+To summarize and clean the count data obtained from `chrom_counts()` simply use
+```
+summarize_counts(sol_gen)
+``` 
 
 [![ropensci footer](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
