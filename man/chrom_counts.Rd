@@ -22,7 +22,7 @@ A \code{data.frame} containing all records matched by query
 This function calls the Chromsome Counts Database (CCDB) API and returns all counts for specified higher taxa.
 }
 \details{
-When using the API to query for species, both matched names and resolved names are searched. This means that all records for potential synonyms will be returned as well. Currently species binomials must be specified by 'genus species' (i.e., space between genus and species).
+When using the API to query for species, both matched names and resolved names are searched. This means that all records for potential synonyms will be returned as well. Currently species binomials must be specified by either 'genus species' (i.e., space between genus and species) or 'genus_species'.
 
 To search for subspecies (subsp.) or varieties (var.), you can use search terms like \code{"Solanum acaule var. albicans"}. Searching for \code{"Solanum acaule"} will return all subspecies and varieties.
 

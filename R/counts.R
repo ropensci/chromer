@@ -10,7 +10,7 @@
 #'
 #' @param foptions additional options to be passed to \code{httr::GET}
 #'
-#' @details When using the API to query for species, both matched names and resolved names are searched. This means that all records for potential synonyms will be returned as well. Currently species binomials must be specified by 'genus species' (i.e., space between genus and species).
+#' @details When using the API to query for species, both matched names and resolved names are searched. This means that all records for potential synonyms will be returned as well. Currently species binomials must be specified by either 'genus species' (i.e., space between genus and species) or 'genus_species'.
 #'
 #' To search for subspecies (subsp.) or varieties (var.), you can use search terms like \code{"Solanum acaule var. albicans"}. Searching for \code{"Solanum acaule"} will return all subspecies and varieties.
 #'
@@ -18,6 +18,7 @@
 #'
 #' @return A \code{data.frame} containing all records matched by query
 #'
+#' @import dplyr
 #' @importFrom httr GET content stop_for_status
 #' @importFrom data.table rbindlist
 #' 
@@ -51,7 +52,9 @@ chrom_counts <-  function(taxa,
     out <- suppressWarnings(check_ccdb_input(rank, full)) 
     l   <- lapply(taxa, function(x)
                 chrom_counts_single(x, rank, out, foptions=foptions))
-    data.frame(rbindlist(l))
+    res <- tbl_df(rbindlist(l))
+    attr(res, "class") <- c(attr(res,"class"), "chrom.counts")
+    res
 }
 
 ## Internal function to do the individual queries
@@ -106,10 +109,10 @@ species_API <- function(x)
 ## Function for pulling out species name without the authorities
 ## Keeping varieties and subspecies
 ## These are indicated by var. and subsp., respectively
-add_binomial <- function(df){
-    df$resolved_binomial <- sapply(df$resolved_name, short_species_name)
-    df
-}
+add_binomial <- function(df)
+    df %>% rowwise() %>%
+        mutate(resolved_binomial = short_species_name(resolved_name))
+ 
     
 short_species_name <- function(x){
     tmp <- strsplit(x, split=" ")[[1]]

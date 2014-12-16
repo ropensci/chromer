@@ -8,7 +8,8 @@ Description: A programmatic interface to the Chromosome Counts Data
     (http://ccdb.tau.ac.il/). This package is part of the rOpenSci suite
     (http://ropensci.org)
 Depends:
-    R (>= 2.15)
+    R (>= 2.15),
+    dplyr
 Imports:
     httr,
     data.table
