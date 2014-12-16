@@ -51,8 +51,11 @@ head(sol_gen_full)
 ## Summarizing the data
 
 The Chromosome Counts Database is a fantastic resource but as it is a compilation of a large number of resources and studies, the data is somewhat messy and challenging to work with. We have written a little function that does some post-processing to make it easier to handle. The function `summarize_counts()` does the following:
+
 1. Aggregates multiple records for the same species
-2. Infers the gametophytic (haploid) number of chromosomes when only the sporophytic (diploid) counts are available.
+
+2. Infers the gametophytic (haploid) number of chromosomes when only the sporophytic (diploid) counts are available. 
+
 3. Parses the records for numeric values. In some cases chromosomal counts also include text characters (e.g., #-#; c.#; #,#,#; and many other varieties). As there are many possible ways that chromosomal counts may be listed in the database, the function takes the naive approach and simply searches the strings for integers. In most cases, this is sensible but may produces weird results on occasion. **Some degree of manual curation will probably be necessary and the output of the summary should be used with caution in downstream analyses**.
 
 To summarize and clean the count data obtained from `chrom_counts()` simply use
