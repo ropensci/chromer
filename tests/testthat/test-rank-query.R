@@ -58,8 +58,8 @@ test_that("Query worked properly", {
 test_that("Species querying works properly for both possible queries", {
 
     ## With space
-    min_spc <- chrom_counts("Castilleja minata", "species")
-    min_und <- chrom_counts("Castilleja_minata", "species")
+    min_spc <- data.frame(chrom_counts("Castilleja minata", "species"))
+    min_und <- data.frame(chrom_counts("Castilleja_minata", "species"))
 
     expect_that(min_spc, equals(min_und))
 })

@@ -53,6 +53,7 @@ chrom_counts <-  function(taxa,
     l   <- lapply(taxa, function(x)
                 chrom_counts_single(x, rank, out, foptions=foptions))
     res <- tbl_df(rbindlist(l))
+    res <- tidy_output(res)
     attr(res, "class") <- c(attr(res,"class"), "chrom.counts")
     res
 }
@@ -109,11 +110,11 @@ species_API <- function(x)
 ## Function for pulling out species name without the authorities
 ## Keeping varieties and subspecies
 ## These are indicated by var. and subsp., respectively
-add_binomial <- function(df)
-    df %>% rowwise() %>%
-        mutate(resolved_binomial = short_species_name(resolved_name))
- 
-    
+add_binomial <- function(x)
+    x %>% rowwise() %>%
+    mutate_(resolved_binomial = ~short_species_name(resolved_name))
+
+
 short_species_name <- function(x){
     tmp <- strsplit(x, split=" ")[[1]]
     ## keep varities and subspecies
@@ -127,5 +128,22 @@ short_species_name <- function(x){
 }
 
 
+tidy_output <- function(x){
+    ord_partial <- c("resolved_binomial", "gametophytic", "sporophytic",
+                     "resolved_name")
 
+    ord_full    <- c("resolved_binomial", "gametophytic", "sporophytic",
+                     "resolved_name", "original_name", "matched_name",
+                     "taxonomic_status", "genus", "family", "major_group",
+                     "id", "source", "internal_id", "reference", "voucher")
+
+    if (ncol(x) == 0){
+        return(x)
+    } else if (ncol(x) == 15){
+        return(x[,ord_full])
+    } else if (ncol(x) == 4){
+        return(x[,ord_partial])
+    }
+
+}
     
