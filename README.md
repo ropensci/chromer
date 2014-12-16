@@ -1,8 +1,8 @@
 [![Build Status](https://travis-ci.org/ropensci/chromer.svg?branch=master)](https://travis-ci.org/ropensci/chromer)   
 [![Build status](https://ci.appveyor.com/api/projects/status/b1xjatd4i1gx1o6n?svg=true)](https://ci.appveyor.com/project/karthik/chromer)
 
-chromer
-=======
+![chromer logo](https://github.com/ropensci/chromer/raw/master/extra/logo.png)
+
 This package provides programmatic access to the [Chromosome Counts Database (CCDB)](http://ccdb.tau.ac.il/home/) [API](http://ccdb.tau.ac.il/services/). The CCDB is a community resource for plant chromosome numbers. For more details on the database, see the associated publication by [Rice et al.](http://onlinelibrary.wiley.com/doi/10.1111/nph.13191/full) in *New Phytologist*. This package is maintained by [Matthew Pennell](http://mwpennell.github.io/) (who is not affiliated with the CCDB group).
 
 ## Installing
