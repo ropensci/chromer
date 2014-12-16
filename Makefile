@@ -1,8 +1,5 @@
 all: install
 
-test: install
-	make -C inst/tests test
-
 roxygen:
 	@mkdir -p man
 	Rscript -e "library(methods); devtools::document()"
