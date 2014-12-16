@@ -1,4 +1,4 @@
-![travis](https://travis-ci.org/ropensci/chromer.png)   
+[![Build Status](https://travis-ci.org/ropensci/chromer.svg?branch=master)](https://travis-ci.org/ropensci/chromer)   
 [![Build status](https://ci.appveyor.com/api/projects/status/b1xjatd4i1gx1o6n?svg=true)](https://ci.appveyor.com/project/karthik/chromer)
 
 chromer
