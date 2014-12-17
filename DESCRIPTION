@@ -2,9 +2,10 @@ Package: chromer
 Title: Interface to Chromosome Counts Database API
 Version: 0.1
 Date: 2014-12-01
-Authors@R: "Matthew Pennell <mwpennell@gmail.com> [aut, cre]"
+Authors@R: person("Matthew", "Pennell", role = c("aut", "cre"),
+    email = "mwpennell@gmail.com")
 Maintainer: Matthew Pennell <mwpennell@gmail.com>
-Description: A programmatic interface to the Chromosome Counts Data
+Description: A programmatic interface to the Chromosome Counts Database
     (http://ccdb.tau.ac.il/). This package is part of the rOpenSci suite
     (http://ropensci.org)
 Depends:

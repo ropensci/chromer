@@ -4,7 +4,7 @@
 #'
 #' @param taxa Taxonomic name(s) to query. Can be either a single name, a vector of multiple names or a list. If supplying multiple names, these must all be of the same \code{rank}.
 #'
-#' @param rank Rank to query. Must be either \code{"species"}, \code{"genus"}, \code{"family"}, or \code{"majorGroup"}
+#' @param rank Rank to query.
 #'
 #' @param full Logical. Whether to return full records. Defaults to \code{FALSE} which returns only partial records. Partial records includes the resolved name as well as the gametophytic (n) and sporophytic (2n) counts.
 #'
@@ -12,7 +12,11 @@
 #'
 #' @details When using the API to query for species, both matched names and resolved names are searched. This means that all records for potential synonyms will be returned as well. Currently species binomials must be specified by either 'genus species' (i.e., space between genus and species) or 'genus_species'.
 #'
-#' To search for subspecies (subsp.) or varieties (var.), you can use search terms like \code{"Solanum acaule var. albicans"}. Searching for \code{"Solanum acaule"} will return all subspecies and varieties.
+#' To search for subspecies (subsp.) or varieties (var.), you can use search terms like:
+#' 
+#' \code{"Solanum acaule var. albicans"}.
+#'
+#' Searching for \code{"Solanum acaule"} will return all subspecies and varieties.
 #'
 #' Currently the only acceptable search terms when specifying \code{"majorGroup"} are \code{"Angiosperms"}, \code{"Gymnosperms"}, \code{"Pteridophytes"}, or \code{"Bryophytes"}.
 #'

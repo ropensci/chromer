@@ -6,7 +6,7 @@
 summarize_counts(counts)
 }
 \arguments{
-\item{counts}{A 'chrom.counts' object inherited from the API call using the function \code{\link{chrom_counts}}}
+\item{counts}{A 'chrom.counts' object inherited from \code{\link{chrom_counts}}.}
 }
 \value{
 A \code{data.frame} containing the resolved binomial, the count type (gametophytic or sporophytic), the counts, the inferred gametophytic count (for sporophytic records) and the number of records supporting each count.

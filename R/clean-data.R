@@ -2,7 +2,7 @@
 #'
 #' This function processes and cleans the data returned from the API call for use in downstream analysis.
 #'
-#' @param counts A 'chrom.counts' object inherited from the API call using the function \code{\link{chrom_counts}}
+#' @param counts A 'chrom.counts' object inherited from \code{\link{chrom_counts}}.
 #'
 #' @details The results from the API call are a bit messy and difficult to use for downstream analyses. This function cleans up the data in three ways. First, it combines aggregates and summarizes all records from each species. Second, many of the counts are combined with text characters (e.g., \code{"#-#"}, \code{"c.#"}, and \code{"#, #, #"}. This function uses regular expressions to pull out all and any numeric values from these strings. Third, some of the records are gametophytic (n) counts and others are from sporophytes (2n); the function simply divides the sporophytic counts in half so that all measurements are on a common scale.
 #'
