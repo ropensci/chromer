@@ -6,7 +6,11 @@
 This package provides programmatic access to the [Chromosome Counts Database (CCDB)](http://ccdb.tau.ac.il/home/) [API](http://ccdb.tau.ac.il/services/). The CCDB is a community resource for plant chromosome numbers. For more details on the database, see the associated publication by [Rice et al.](http://onlinelibrary.wiley.com/doi/10.1111/nph.13191/full) in *New Phytologist*. This package is maintained by [Matthew Pennell](http://mwpennell.github.io/) (who is not affiliated with the CCDB group).
 
 ## Installing
-This is currently only on GitHub so the best way to install is with [devtools](http://github.com/hadley/devtools)
+The package can be installed directly from CRAN
+```r
+install.packages("chromer")
+```
+or, for the latest version, you can install directly from GitHub using [devtools](http://github.com/hadley/devtools)
 ```r
 ## install.packages("devtools")
 devtools::install_github("ropensci/chromer")
