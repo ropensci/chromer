@@ -4,6 +4,9 @@ roxygen:
 	@mkdir -p man
 	Rscript -e "library(methods); devtools::document()"
 
+test:
+	 Rscript -e 'library(methods); devtools::test()'
+
 install:
 	R CMD INSTALL --no-test-load .
 
