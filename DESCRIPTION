@@ -1,6 +1,6 @@
 Package: chromer
 Title: Interface to Chromosome Counts Database API
-Version: 0.1
+Version: 0.1.0.9999
 Date: 2014-12-01
 Authors@R: person("Matthew", "Pennell", role = c("aut", "cre"),
     email = "mwpennell@gmail.com")
