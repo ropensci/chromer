@@ -49,7 +49,7 @@
 #' chrom_counts("Orobanchaceae", "family")
 #'
 #' }
-chrom_counts <-  function(taxa,
+chrom_counts <- function(taxa,
                           rank=c("species", "genus", "family", "majorGroup"),
                           full=FALSE, foptions=list()){
 
