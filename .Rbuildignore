@@ -5,3 +5,6 @@ appveyor.yml
 test-all.R
 extra
 misc
+^.*\.Rproj$
+^\.Rproj\.user$
+^CONDUCT\.md$

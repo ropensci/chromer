@@ -7,5 +7,6 @@
 #' @docType package
 #' @name chromer
 #' @aliases chromer-chromer chromer
+#' @importFrom stats na.omit
 #'
 NULL

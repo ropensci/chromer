@@ -7,10 +7,13 @@ This package provides programmatic access to the [Chromosome Counts Database (CC
 
 ## Installing
 The package can be installed directly from CRAN
+
 ```r
 install.packages("chromer")
 ```
+
 or, for the latest version, you can install directly from GitHub using [devtools](http://github.com/hadley/devtools)
+
 ```r
 ## install.packages("devtools")
 devtools::install_github("ropensci/chromer")
@@ -19,35 +22,46 @@ devtools::install_github("ropensci/chromer")
 ## Querying the CCDB
 
 It is possible to query the database in three ways: by `species`, `genus`, `family`, and `majorGroup`. For example, if we are interested in the genus *Solanum* (Solanaceae), which contains the potato, tomato, and eggplant, we would query the database as follows
+
 ```r
 library(chromer)
 sol_gen <- chrom_counts(taxa="Solanum", rank="genus")
 head(sol_gen)
 nrow(sol_gen)
 ```
+
 There are over 3000 records for Solanum alone! If we are interested in a particular species, such as tomatoes, we can search for the species directly. 
+
 ```r
 sol_tom <- chrom_counts(taxa="Solanum_lycopersicum", rank="species")
 head(sol_tom)
 ```
+
 Note that `taxa="Solanum lycopersicum"` (including a space between the genus and species name) will also work here.
 
 If we wanted to get data on the whole family, we simply type
+
 ```r
 sol_fam <- chrom_counts(taxa="Solanaceae", rank="family")
 head(sol_fam)
 ```
+
 Or, expand the scope much further and get all Angiosperms (this will take some time)
+
 ```r
 ang <- chrom_counts(taxa="Angiosperms", rank="majorGroup")
 head(ang)
 ```
 
-There are two options for returning data. The first (default) is to only return the species name information (including taxonomic resolutions made by [Taxonome](http://taxonome.bitbucket.org/)) and the haploid and diploid counts. Setting the argument `full=TRUE`
+There are two options for returning data. The first (default) is to only return the species name information (including taxonomic resolutions made by [Taxonome](http://taxonome.bitbucket.org/)) and the haploid and diploid counts. Setting the argument 
+`full=TRUE`
+
 ```r
 sol_gen_full <- chrom_counts("Solanum", rank="genus", full=TRUE)
 ```
+
 returns a bunch more info on the records.
+
 ```r
 head(sol_gen_full)
 ```
@@ -66,5 +80,12 @@ To summarize and clean the count data obtained from `chrom_counts()` simply use
 ```
 summarize_counts(sol_gen)
 ``` 
+
+## Meta
+
+* Please [report any issues or bugs](https://github.com/ropensci/chromer/issues).
+* License: CC0
+* Get citation information for `chromer` in R doing `citation(package = 'chromer')`
+* Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
 
 [![ropensci footer](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
