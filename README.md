@@ -25,7 +25,7 @@ It is possible to query the database in three ways: by `species`, `genus`, `fami
 
 ```r
 library(chromer)
-sol_gen <- chrom_counts(taxa="Solanum", rank="genus")
+sol_gen <- chrom_counts(taxa = "Solanum", rank = "genus")
 head(sol_gen)
 nrow(sol_gen)
 ```
@@ -33,7 +33,7 @@ nrow(sol_gen)
 There are over 3000 records for Solanum alone! If we are interested in a particular species, such as tomatoes, we can search for the species directly. 
 
 ```r
-sol_tom <- chrom_counts(taxa="Solanum_lycopersicum", rank="species")
+sol_tom <- chrom_counts(taxa = "Solanum_lycopersicum", rank = "species")
 head(sol_tom)
 ```
 
@@ -42,14 +42,14 @@ Note that `taxa="Solanum lycopersicum"` (including a space between the genus and
 If we wanted to get data on the whole family, we simply type
 
 ```r
-sol_fam <- chrom_counts(taxa="Solanaceae", rank="family")
+sol_fam <- chrom_counts(taxa = "Solanaceae", rank = "family")
 head(sol_fam)
 ```
 
 Or, expand the scope much further and get all Angiosperms (this will take some time)
 
 ```r
-ang <- chrom_counts(taxa="Angiosperms", rank="majorGroup")
+ang <- chrom_counts(taxa = "Angiosperms", rank = "majorGroup")
 head(ang)
 ```
 
@@ -57,7 +57,7 @@ There are two options for returning data. The first (default) is to only return 
 `full=TRUE`
 
 ```r
-sol_gen_full <- chrom_counts("Solanum", rank="genus", full=TRUE)
+sol_gen_full <- chrom_counts("Solanum", rank = "genus", full = TRUE)
 ```
 
 returns a bunch more info on the records.
@@ -85,7 +85,7 @@ summarize_counts(sol_gen)
 
 * Please [report any issues or bugs](https://github.com/ropensci/chromer/issues).
 * License: CC0
-* Get citation information for `chromer` in R doing `citation(package = 'chromer')`
+* Get citation information for `chromer` in R doing `citation(package = "chromer")`
 * Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
 
 [![ropensci footer](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
