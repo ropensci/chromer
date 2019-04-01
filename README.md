@@ -1,6 +1,5 @@
 [![Build Status](https://travis-ci.org/ropensci/chromer.svg?branch=master)](https://travis-ci.org/ropensci/chromer)   
 [![Build status](https://ci.appveyor.com/api/projects/status/b1xjatd4i1gx1o6n?svg=true)](https://ci.appveyor.com/project/karthik/chromer)
-[![codecov.io](https://codecov.io/github/ropensci/chromer/coverage.svg?branch=master)](https://codecov.io/github/ropensci/chromer?branch=master)
 
 ![chromer logo](https://github.com/ropensci/chromer/raw/master/extra/logo.png)
 
