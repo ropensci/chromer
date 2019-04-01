@@ -5,9 +5,6 @@ cache: packages
 env:
   - global:
     - WARNINGS_ARE_ERRORS=1
-    
-after_success:
-- Rscript -e 'covr::codecov()'    
 
 notifications:
   slack:
