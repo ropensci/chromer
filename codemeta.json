@@ -1,0 +1,176 @@
+{
+  "@context": [
+    "https://doi.org/10.5063/schema/codemeta-2.0",
+    "http://schema.org"
+  ],
+  "@type": "SoftwareSourceCode",
+  "identifier": "chromer",
+  "description": "A programmatic interface to the Chromosome Counts Database (<http://ccdb.tau.ac.il/>). This package is part of the rOpenSci suite (<https://ropensci.org>)",
+  "name": "chromer: Interface to Chromosome Counts Database API",
+  "codeRepository": "https://github.com/ropensci/chromer",
+  "issueTracker": "https://github.com/ropensci/chromer/issues",
+  "license": "https://creativecommons.org/choose/zero/",
+  "version": "0.1.0",
+  "programmingLanguage": {
+    "@type": "ComputerLanguage",
+    "name": "R",
+    "version": "3.6.0",
+    "url": "https://r-project.org"
+  },
+  "runtimePlatform": "R version 3.6.0 (2019-04-26)",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Matthew",
+      "familyName": "Pennell",
+	  "email": "mwpennell at gmail.com"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Paula Andrea",
+      "familyName": "Martinez",
+      "@id": "https://orcid.org/0000-0002-8990-1985",
+	  "email": "orchid00 at gmail.com"
+    }
+  ],
+  "contributor": {
+	  "@type": "Person",
+      "givenName": "Paula Andrea",
+      "familyName": "Martinez",
+      "@id": "https://orcid.org/0000-0002-8990-1985",
+	  "email": "orchid00 at gmail.com"
+  },
+  "copyrightHolder": {},
+  "funder": {},
+  "maintainer": [
+    {
+      "@type": "Person",
+      "givenName": "Paula Andrea",
+      "familyName": "Martinez",
+      "@id": "https://orcid.org/0000-0002-8990-1985",
+	  "email": "orchid00 at gmail.com"
+    }
+  ],
+  "softwareSuggestions": [
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "ggplot2",
+      "name": "ggplot2",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=ggplot2"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "knitr",
+      "name": "knitr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=knitr"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "rmarkdown",
+      "name": "rmarkdown",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "testthat",
+      "name": "testthat",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=testthat"
+    }
+  ],
+  "softwareRequirements": [
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "dplyr",
+      "name": "dplyr: A Grammar of Data Manipulation",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=dplyr"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "data.table",
+      "name": "data.table",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=data.table"
+    }
+  ],
+  "readme": "https://github.com/ropensci/chromer/blob/master/README.md",
+  "fileSize": "500.387KB",
+  "contIntegration": [
+    "https://travis-ci.org/ropensci/chromer",
+    "https://ci.appveyor.com/project/karthik/chromer"
+  ],
+  "developmentStatus": "https://www.repostatus.org/#active",
+  "review": {
+    "@type": "Review",
+    "url": "",
+    "provider": "http://ropensci.org"
+  },
+  "citation": [
+    {
+      "@type": "CreativeWork",
+	  "author": [
+        {
+	      "@type": "Person",
+          "givenName": "Paula Andrea",
+          "familyName": "Martinez",
+          "@id": "https://orcid.org/0000-0002-8990-1985",
+	      "email": "orchid00 at gmail.com"
+	    },
+        {
+          "@type": "Person",
+          "givenName": "Matthew",
+          "familyName": "Pennell",
+		  "email": "mwpennell at gmail.com"
+        }
+      ],
+      "name": "{chromer}: An {R} Client for  Chromosome Counts Database (CCDB) {API}(http://ccdb.tau.ac.il/). This package is part of the rOpenSci suite (http://ropensci.org)",
+      "url": "https://CRAN.R-project.org/package=chromer"
+    },
+    {
+      "@type": "CreativeWork",
+      "datePublished": "2019",
+      "author": [
+        {
+          "@type": "Organization",
+          "name": "rOpenSci"
+        }
+      ],
+      "url": "https://ropensci.org/",
+      "description": "rOpenSci fosters a culture that values open and reproducible research using shared data and reusable software."
+    }
+  ]
+}
