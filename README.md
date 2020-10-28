@@ -8,7 +8,7 @@ This package provides programmatic access to the [Chromosome Counts Database (CC
 This package is maintained by [Paula Andrea Martinez](https://twitter.com/orchid00) and formerly maintained by [Matthew Pennell](http://mwpennell.github.io/) who are not affiliated with the CCDB group. The URL for Chromer docs is [https://docs.ropensci.org/chromer/](https://docs.ropensci.org/chromer/). 
 
 ## Installing
-The package can be installed directly from CRAN, but it is currently outdated -- PLEASE install directlu from GitHub
+The package can be installed directly from CRAN, but it is currently outdated -- PLEASE install directly from GitHub
 
 ```r
 install.packages("chromer")
