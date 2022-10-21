@@ -19,7 +19,8 @@
       "@type": "Person",
       "givenName": "Matthew",
       "familyName": "Pennell",
-      "email": "mwpennell@gmail.com"
+      "email": "mwpennell@gmail.com",
+      "@id": "https://orcid.org/0000-0002-2886-3970"
     },
     {
       "@type": "Person",
@@ -134,7 +135,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "24.578KB",
+  "fileSize": "24.732KB",
   "relatedLink": "https://docs.ropensci.org/chromer/",
   "releaseNotes": "https://github.com/kbroman/chromer/blob/master/NEWS",
   "readme": "https://github.com/kbroman/chromer/blob/master/README.md",

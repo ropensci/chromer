@@ -3,7 +3,8 @@ Title: Interface to Chromosome Counts Database API
 Version: 0.1.2.9001
 Date: 2022-10-21
 Authors@R: c(
-    person("Matthew", "Pennell", role = "aut", email = "mwpennell@gmail.com"),
+    person("Matthew", "Pennell", role = "aut", email = "mwpennell@gmail.com",
+           comment = c(ORCID = "0000-0002-2886-3970")),
     person("Paula Andrea", "Martinez", email = "orchid00@gmail.com",
            role = "aut", comment = c(ORCID = "0000-0002-8990-1985")),
     person("Karl W", "Broman", role=c("aut", "cre"), email="broman@wisc.edu",
