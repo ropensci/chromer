@@ -53,7 +53,8 @@ chrom_counts <- function(taxa,
                           rank=c("species", "genus", "family", "majorGroup"),
                           full=FALSE, foptions=list()){
 
-    out <- suppressWarnings(check_ccdb_input(rank, full))
+    rank <- match.arg(rank)
+    out <- check_ccdb_input(rank, full)
     l   <- lapply(taxa, function(x)
                 chrom_counts_single(x, rank, out, foptions=foptions))
     res <- tbl_df(rbindlist(l))
@@ -88,7 +89,7 @@ chrom_counts_single <- function(taxa, rank, out, foptions){
 ## Utility function for checking input
 check_ccdb_input <- function(rank, full){
 
-    if (length(rank) != 1 | !rank %in% rank_names())
+    if (length(rank) != 1 || !rank %in% rank_names())
         stop("Specify a single taxonomic rank. \n Options are 'species', 'genus', 'family', and 'majorGroup'.")
 
     if (full){
