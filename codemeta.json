@@ -2,7 +2,7 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "identifier": "chromer",
-  "description": "A programmatic interface to the Chromosome Counts Database (<http://ccdb.tau.ac.il/>). This package is part of the rOpenSci suite (<https://ropensci.org>).",
+  "description": "A programmatic interface to the Chromosome Counts Database (<http://ccdb.tau.ac.il/>), Rice et al. (2014) <doi:10.1111/nph.13191>. This package is part of the rOpenSci suite (<https://ropensci.org>).",
   "name": "chromer: Interface to Chromosome Counts Database API",
   "codeRepository": "https://github.com/kbroman/chromer",
   "issueTracker": "https://github.com/ropensci/chromer/issues/new",
@@ -98,6 +98,18 @@
     },
     "4": {
       "@type": "SoftwareApplication",
+      "identifier": "tibble",
+      "name": "tibble",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=tibble"
+    },
+    "5": {
+      "@type": "SoftwareApplication",
       "identifier": "httr",
       "name": "httr",
       "provider": {
@@ -108,7 +120,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=httr"
     },
-    "5": {
+    "6": {
       "@type": "SoftwareApplication",
       "identifier": "data.table",
       "name": "data.table",
@@ -122,7 +134,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "24.52KB",
+  "fileSize": "24.578KB",
   "relatedLink": "https://docs.ropensci.org/chromer/",
   "releaseNotes": "https://github.com/kbroman/chromer/blob/master/NEWS",
   "readme": "https://github.com/kbroman/chromer/blob/master/README.md",

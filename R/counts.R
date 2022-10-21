@@ -57,7 +57,7 @@ chrom_counts <- function(taxa,
     out <- check_ccdb_input(rank, full)
     l   <- lapply(taxa, function(x)
                 chrom_counts_single(x, rank, out, foptions=foptions))
-    res <- tbl_df(rbindlist(l))
+    res <- tibble::as_tibble(rbindlist(l))
     res <- tidy_output(res)
     attr(res, "class") <- c(attr(res,"class"), "chrom.counts")
     res
@@ -153,4 +153,3 @@ tidy_output <- function(x){
     }
 
 }
-
