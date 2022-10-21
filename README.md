@@ -1,11 +1,22 @@
-[![Build Status](https://travis-ci.org/ropensci/chromer.svg?branch=master)](https://travis-ci.org/ropensci/chromer)   
+[![Build Status](https://travis-ci.org/ropensci/chromer.svg?branch=master)](https://travis-ci.org/ropensci/chromer)
 [![Build status](https://ci.appveyor.com/api/projects/status/b1xjatd4i1gx1o6n?svg=true)](https://ci.appveyor.com/project/karthik/chromer)
 
 ![chromer logo](https://github.com/ropensci/chromer/raw/master/extra/logo.png)
 
-This package provides programmatic access to the [Chromosome Counts Database (CCDB)](http://ccdb.tau.ac.il/home/) [API](http://ccdb.tau.ac.il/services/). The CCDB is a community resource for plant chromosome numbers. For more details on the database, see the associated publication by [Rice et al.](http://onlinelibrary.wiley.com/doi/10.1111/nph.13191/full) in *New Phytologist*. 
+This package provides programmatic access to the [Chromosome Counts
+Database (CCDB)](http://ccdb.tau.ac.il/home/)
+[API](http://ccdb.tau.ac.il/services/). The CCDB is a community
+resource for plant chromosome numbers. For more details on the
+database, see the associated publication by [Rice et
+al.](https://nph.onlinelibrary.wiley.com/doi/10.1111/nph.13191) in
+*New Phytologist*.
 
-This package is maintained by [Karl Broman](https://kbroman.org) and was previously maintained by [Paula Andrea Martinez](https://twitter.com/orchid00) and [Matthew Pennell](http://mwpennell.github.io/), none of whom are affiliated with the CCDB group. The URL for Chromer docs is [https://docs.ropensci.org/chromer/](https://docs.ropensci.org/chromer/).
+This package is maintained by [Karl Broman](https://kbroman.org) and
+was formerly maintained by [Paula Andrea
+Martinez](https://twitter.com/orchid00) and [Matthew
+Pennell](https://mwpennell.github.io/), none of whom are affiliated
+with the CCDB group. The URL for Chromer docs is
+<https://docs.ropensci.org/chromer/>.
 
 ## Installing
 The package can be installed directly from CRAN, but it is currently outdated -- PLEASE install directly from GitHub
@@ -14,7 +25,7 @@ The package can be installed directly from CRAN, but it is currently outdated --
 install.packages("chromer")
 ```
 
-or, for the latest version, you can install directly from GitHub using [devtools](http://github.com/hadley/devtools)
+or, for the latest version, you can install directly from GitHub using [devtools](https://github.com/r-lib/devtools)
 
 ```r
 ## install.packages("devtools")
@@ -32,7 +43,7 @@ head(sol_gen)
 nrow(sol_gen)
 ```
 
-There are over 3000 records for Solanum alone! If we are interested in a particular species, such as tomatoes, we can search for the species directly. 
+There are over 3000 records for Solanum alone! If we are interested in a particular species, such as tomatoes, we can search for the species directly.
 
 ```r
 sol_tom <- chrom_counts(taxa = "Solanum_lycopersicum", rank = "species")
@@ -55,7 +66,7 @@ ang <- chrom_counts(taxa = "Angiosperms", rank = "majorGroup")
 head(ang)
 ```
 
-There are two options for returning data. The first (default) is to only return the species name information (including taxonomic resolutions made by [Taxonome](http://taxonome.bitbucket.org/)) and the haploid and diploid counts. Setting the argument 
+There are two options for returning data. The first (default) is to only return the species name information (including taxonomic resolutions made by [Taxonome](https://bitbucket.org/taxonome/taxonome)) and the haploid and diploid counts. Setting the argument
 `full=TRUE`
 
 ```r
@@ -74,14 +85,14 @@ The Chromosome Counts Database is a fantastic resource but as it is a compilatio
 
 1. Aggregates multiple records for the same species
 
-2. Infers the gametophytic (haploid) number of chromosomes when only the sporophytic (diploid) counts are available. 
+2. Infers the gametophytic (haploid) number of chromosomes when only the sporophytic (diploid) counts are available.
 
 3. Parses the records for numeric values. In some cases chromosomal counts also include text characters (e.g., #-#; c.#; #,#,#; and many other varieties). As there are many possible ways that chromosomal counts may be listed in the database, the function takes the naive approach and simply searches the strings for integers. In most cases, this is sensible but may produces weird results on occasion. **Some degree of manual curation will probably be necessary and the output of the summary should be used with caution in downstream analyses**.
 
 To summarize and clean the count data obtained from `chrom_counts()` simply use
 ```
 summarize_counts(sol_gen)
-``` 
+```
 
 ## Meta
 
@@ -90,4 +101,4 @@ summarize_counts(sol_gen)
 * Get citation information for `chromer` in R doing `citation(package = "chromer")`
 * Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
 
-[![ropensci footer](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
+[![ropensci footer](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)
