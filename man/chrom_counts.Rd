@@ -4,8 +4,12 @@
 \alias{chrom_counts}
 \title{Returns chromosome counts from Chromosome Counts Database API}
 \usage{
-chrom_counts(taxa, rank = c("species", "genus", "family", "majorGroup"),
-  full = FALSE, foptions = list())
+chrom_counts(
+  taxa,
+  rank = c("species", "genus", "family", "majorGroup"),
+  full = FALSE,
+  foptions = list()
+)
 }
 \arguments{
 \item{taxa}{Taxonomic name(s) to query. Can be either a single name, a vector of multiple names or a list. If supplying multiple names, these must all be of the same \code{rank}.}
@@ -56,4 +60,3 @@ chrom_counts("Orobanchaceae", "family")
 
 }
 }
-

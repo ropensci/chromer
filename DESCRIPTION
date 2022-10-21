@@ -25,4 +25,5 @@ Suggests:
 URL: https://docs.ropensci.org/chromer/
 BugReports: https://github.com/ropensci/chromer/issues/new
 License: MIT + file LICENSE
-RoxygenNote: 5.0.1
+RoxygenNote: 7.2.1
+Encoding: UTF-8
