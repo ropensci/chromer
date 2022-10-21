@@ -59,7 +59,7 @@ chrom_counts <- function(taxa,
                 chrom_counts_single(x, rank, out, foptions=foptions))
     res <- tibble::as_tibble(rbindlist(l))
     res <- tidy_output(res)
-    attr(res, "class") <- c(attr(res,"class"), "chrom.counts")
+    if(!is.null(res)) attr(res, "class") <- c(attr(res,"class"), "chrom.counts")
     res
 }
 
