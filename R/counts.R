@@ -117,7 +117,7 @@ species_API <- function(x)
 ## These are indicated by var. and subsp., respectively
 add_binomial <- function(x)
     x %>% rowwise() %>%
-    mutate_(resolved_binomial = ~short_species_name(resolved_name))
+    mutate(resolved_binomial = short_species_name(resolved_name))
 
 
 short_species_name <- function(x){
