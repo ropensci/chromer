@@ -121,21 +121,9 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=httr"
     },
-    "6": {
-      "@type": "SoftwareApplication",
-      "identifier": "data.table",
-      "name": "data.table",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=data.table"
-    },
     "SystemRequirements": null
   },
-  "fileSize": "24.732KB",
+  "fileSize": "24.645KB",
   "relatedLink": "https://docs.ropensci.org/chromer/",
   "releaseNotes": "https://github.com/kbroman/chromer/blob/master/NEWS",
   "readme": "https://github.com/kbroman/chromer/blob/master/README.md",

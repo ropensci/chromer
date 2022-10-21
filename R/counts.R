@@ -24,7 +24,6 @@
 #'
 #' @import dplyr
 #' @importFrom httr GET content stop_for_status
-#' @importFrom data.table rbindlist
 #'
 #' @export chrom_counts
 #'
@@ -57,7 +56,7 @@ chrom_counts <- function(taxa,
     out <- check_ccdb_input(rank, full)
     l   <- lapply(taxa, function(x)
                 chrom_counts_single(x, rank, out, foptions=foptions))
-    res <- tibble::as_tibble(rbindlist(l))
+    res <- tibble::as_tibble(dplyr::bind_rows(l))
     res <- tidy_output(res)
     if(!is.null(res)) attr(res, "class") <- c(attr(res,"class"), "chrom.counts")
     res
@@ -77,7 +76,7 @@ chrom_counts_single <- function(taxa, rank, out, foptions){
 
     f <- function(x) if (is.null(x)) NA_character_ else x
     counts_data_json <- lapply(counts_data_json, lapply, f)
-    counts_data <- data.frame(rbindlist(counts_data_json))
+    counts_data <- data.frame(dplyr::bind_rows(counts_data_json))
 
     if (length(counts_data) > 0)
         counts_data <- add_binomial(counts_data)

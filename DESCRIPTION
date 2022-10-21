@@ -19,8 +19,7 @@ Imports:
     stats,
     dplyr,
     tibble,
-    httr,
-    data.table
+    httr
 Suggests:
     roxygen2 (>= 5.0.1),
     testthat
