@@ -28,9 +28,9 @@ summarize_counts <- function(counts){
     if (!inherits(counts, "chrom.counts"))
         stop("Object must be of class 'chrom.counts' returned from chrom_counts()")
     sp <- unique(counts$resolved_binomial)
-    df <- lapply(sp, function(x) filter_(counts, ~(resolved_binomial == x)))
+    df <- lapply(sp, function(x) filter(tibble::as_tibble(counts), (resolved_binomial == x)))
     ct <- lapply(df, get_counts)
-    tbl_df(dplyr::bind_rows(ct))
+    tibble::as_tibble(dplyr::bind_rows(ct))
 }
 
 
