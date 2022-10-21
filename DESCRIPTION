@@ -6,7 +6,7 @@ Authors@R: c(
     person("Matthew", "Pennell", role = "aut", email = "mwpennell@gmail.com"),
     person("Paula Andrea", "Martinez", email = "orchid00@gmail.com",
            role = "aut", comment = c(ORCID = "0000-0002-8990-1985")),
-    person("Karl W", "Broman", role=c("aut", "cre"),
+    person("Karl W", "Broman", role=c("aut", "cre"), email="broman@wisc.edu",
            comment=c(ORCID = "0000-0002-4914-6671"))
   )
 Description: A programmatic interface to the Chromosome Counts Database
