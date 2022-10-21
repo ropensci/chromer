@@ -97,7 +97,7 @@ summarize_counts(sol_gen)
 ## Meta
 
 * Please [report any issues or bugs](https://github.com/ropensci/chromer/issues).
-* License: CC0
+* License: [MIT](LICENSE.md)
 * Get citation information for `chromer` in R doing `citation(package = "chromer")`
 * Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
 
