@@ -24,6 +24,7 @@
 #'
 #' }
 summarize_counts <- function(counts){
+    resolved_binomial <- NULL # to avoid a Note re global variable in R CMD check
 
     if (!inherits(counts, "chrom.counts"))
         stop("Object must be of class 'chrom.counts' returned from chrom_counts()")
