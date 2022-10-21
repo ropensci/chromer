@@ -6,7 +6,7 @@
   "name": "chromer: Interface to Chromosome Counts Database API",
   "codeRepository": "https://github.com/kbroman/chromer",
   "issueTracker": "https://github.com/ropensci/chromer/issues/new",
-  "license": "https://spdx.org/licenses/CC0-1.0",
+  "license": "https://spdx.org/licenses/MIT",
   "version": "0.1.2.9001",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
@@ -122,7 +122,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "24.505KB",
+  "fileSize": "24.52KB",
   "relatedLink": "https://docs.ropensci.org/chromer/",
   "releaseNotes": "https://github.com/kbroman/chromer/blob/master/NEWS",
   "readme": "https://github.com/kbroman/chromer/blob/master/README.md",
