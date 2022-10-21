@@ -115,9 +115,12 @@ species_API <- function(x)
 ## Function for pulling out species name without the authorities
 ## Keeping varieties and subspecies
 ## These are indicated by var. and subsp., respectively
-add_binomial <- function(x)
+add_binomial <- function(x) {
+    resolved_name <- NULL # avoid Note (in R CMD check) about global variable
+
     x %>% rowwise() %>%
     mutate(resolved_binomial = short_species_name(resolved_name))
+}
 
 
 short_species_name <- function(x){
