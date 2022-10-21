@@ -8,3 +8,4 @@ misc
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^CONDUCT\.md$
+^codemeta\.json$

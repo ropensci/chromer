@@ -7,7 +7,10 @@ roxygen:
 test:
 	 Rscript -e 'library(methods); devtools::test()'
 
-install:
+codemeta.json: DESCRIPTION
+	 Rscript -e 'codemetar::write_codemeta()'
+
+install: codemeta.json
 	R CMD INSTALL --no-test-load .
 
 build:
