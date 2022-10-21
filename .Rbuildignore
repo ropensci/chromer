@@ -9,3 +9,4 @@ misc
 ^\.Rproj\.user$
 ^CONDUCT\.md$
 ^codemeta\.json$
+^LICENSE\.md$
