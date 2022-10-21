@@ -14,7 +14,7 @@ test_that("Main function returns the correct format", {
     expect_that(cp, is_a("data.frame"))
     expect_that(cf, is_a("data.frame"))
     expect_equal(ncol(cp), 4)
-    expect_equal(ncol(cf), 15)
+    expect_equal(ncol(cf), 13)   # previously said to be 15
     expect_equal(nrow(cp), nrow(cf))
 
 })
@@ -22,8 +22,8 @@ test_that("Main function returns the correct format", {
 test_that("No match returns empty data frame", {
 
     dum <- chrom_counts(taxa="Notagenus", rank="genus")
-    expect_that(nrow(dum), equals(0))
-    expect_that(ncol(dum), equals(0))
+    expect_equal(nrow(dum), 0)
+    expect_equal(ncol(dum), 0)
 })
 
 
@@ -38,7 +38,7 @@ test_that("Querying multiple taxa works", {
     expect_that(mp, is_a("data.frame"))
     expect_that(nrow(mp), equals(2*nrow(cp)))
 })
-    
+
 
 test_that("Query worked properly", {
 
@@ -97,10 +97,3 @@ test_that("Bad input throws error", {
     expect_that(chrom_counts("foo", "foo"), throws_error())
 
 })
-    
-    
-
-    
-    
-    
-
