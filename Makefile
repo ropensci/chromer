@@ -1,11 +1,10 @@
 all: install
 
-roxygen:
-	@mkdir -p man
-	Rscript -e "library(methods); devtools::document()"
+document:
+	R -e "devtools::document()"
 
 test:
-	 Rscript -e 'library(methods); devtools::test()'
+	 R -e "devtools::test()"
 
 codemeta.json: DESCRIPTION
 	 Rscript -e 'codemetar::write_codemeta()'
