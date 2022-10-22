@@ -1,7 +1,5 @@
-Makefile
-NEWS
-test-all.R
-extra
+^Makefile$
+^extra$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^CONDUCT\.md$
