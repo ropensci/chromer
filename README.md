@@ -25,11 +25,11 @@ The package can be installed directly from CRAN, but it is currently outdated --
 install.packages("chromer")
 ```
 
-or, for the latest version, you can install directly from GitHub using [devtools](https://github.com/r-lib/devtools)
+or, for the latest version, you can install directly from GitHub using [remotes](https://github.com/r-lib/remotes)
 
 ```r
-## install.packages("devtools")
-devtools::install_github("ropensci/chromer")
+## install.packages("remotes")
+remotes::install_github("ropensci/chromer")
 ```
 
 ## Querying the CCDB
@@ -90,7 +90,8 @@ The Chromosome Counts Database is a fantastic resource but as it is a compilatio
 3. Parses the records for numeric values. In some cases chromosomal counts also include text characters (e.g., #-#; c.#; #,#,#; and many other varieties). As there are many possible ways that chromosomal counts may be listed in the database, the function takes the naive approach and simply searches the strings for integers. In most cases, this is sensible but may produces weird results on occasion. **Some degree of manual curation will probably be necessary and the output of the summary should be used with caution in downstream analyses**.
 
 To summarize and clean the count data obtained from `chrom_counts()` simply use
-```
+
+```r
 summarize_counts(sol_gen)
 ```
 
