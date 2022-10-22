@@ -9,7 +9,7 @@ test:
 codemeta.json: DESCRIPTION
 	 Rscript -e 'codemetar::write_codemeta()'
 
-install: codemeta.json
+install: codemeta.json document
 	R CMD INSTALL --no-test-load .
 
 build:

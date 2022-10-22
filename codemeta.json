@@ -123,9 +123,9 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "24.645KB",
+  "fileSize": "24.764KB",
   "relatedLink": "https://docs.ropensci.org/chromer/",
   "releaseNotes": "https://github.com/kbroman/chromer/blob/master/NEWS",
   "readme": "https://github.com/kbroman/chromer/blob/master/README.md",
-  "contIntegration": ["https://travis-ci.org/ropensci/chromer", "https://ci.appveyor.com/project/karthik/chromer"]
+  "contIntegration": "https://github.com/kbroman/chromer/actions/workflows/R-CMD-check.yaml"
 }

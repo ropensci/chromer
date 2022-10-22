@@ -21,7 +21,7 @@ The results from the API call are a bit messy and difficult to use for downstrea
 IMPORTANT: Use this function with caution. Parsing the counts programmatically may be useful but it may generate erroneous results in some cases if input is in an odd format. For example, if the count is \code{"#+-#"}, the function will return both the first and second \code{#} as valid counts . Given the creativity(?) of researchers in entering data, it is hard to predict all possible ways that the counts may be represented. Therefore, some manual checking will probably be necessary.
 }
 \examples{
-\dontrun{
+\donttest{
 
 ## Get all counts for genus Castilleja
 res <- chrom_counts("Castilleja", "genus")
