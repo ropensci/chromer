@@ -30,11 +30,11 @@ test_that("Querying multiple taxa works", {
     mp <- chrom_counts(taxa=c("Lachemilla", "Lachemilla"), rank="genus",
                        full=FALSE)
     expect_that(mp, is_a("data.frame"))
-    expect_that(nrow(mp), equals(2*nrow(cp)))
+    expect_equal(nrow(mp), 2*nrow(cp))
     mp <- chrom_counts(taxa=list("Lachemilla", "Lachemilla"), rank="genus",
                        full=FALSE)
     expect_that(mp, is_a("data.frame"))
-    expect_that(nrow(mp), equals(2*nrow(cp)))
+    expect_equal(nrow(mp), 2*nrow(cp))
 })
 
 
@@ -43,13 +43,13 @@ test_that("Query worked properly", {
     ## Full records
     gen <- unique(cf$genus)
     fam <- unique(cf$family)
-    expect_that(gen, equals("Lachemilla"))
-    expect_that(fam, equals("Rosaceae"))
+    expect_equal(gen, "Lachemilla")
+    expect_equal(fam, "Rosaceae")
 
     ## Partial records
     gen <- unique(sapply(cp$resolved_binomial, function(x)
                          {strsplit(x, split="_")[[1]][1]}))
-    expect_that(gen, equals("Lachemilla"))
+    expect_equal(gen, "Lachemilla")
 
 })
 
@@ -59,39 +59,38 @@ test_that("Species querying works properly for both possible queries", {
     min_spc <- data.frame(chrom_counts("Castilleja minata", "species"))
     min_und <- data.frame(chrom_counts("Castilleja_minata", "species"))
 
-    expect_that(min_spc, equals(min_und))
+    expect_equal(min_spc, min_und)
 })
 
 test_that("Building species name worked properly",{
 
     spf <- cf$resolved_binomial
     spp <- cp$resolved_binomial
-    expect_that(spf, equals(spp))
+    expect_equal(spf, spp)
 
     sp_tmp <- cf$resolved_name[1]
-    expect_that(short_species_name(sp_tmp), equals(spf[1]))
+    expect_equal(short_species_name(sp_tmp), spf[1])
 
     ## Make sure strsplit is working properly
     sp_dum <- "Dummy species (Tax. auth.) Name"
     sh_dum <- short_species_name(sp_dum)
-    expect_that(sh_dum, equals("Dummy_species"))
+    expect_equal(sh_dum, "Dummy_species")
 
     ## Varieties
     sp_var <- "Dummy species var. x (Tax. auth.) Name"
     sh_var <- short_species_name(sp_var)
-    expect_that(sh_var, equals("Dummy_species_var._x"))
+    expect_equal(sh_var, "Dummy_species_var._x")
 
     ## Subspecies
     sp_sub <- "Dummy species subsp. x (Tax. auth.) Name"
     sh_sub <- short_species_name(sp_sub)
-    expect_that(sh_sub, equals("Dummy_species_subsp._x"))
+    expect_equal(sh_sub, "Dummy_species_subsp._x")
 })
 
 
 test_that("Bad input throws error", {
 
-    expect_that(chrom_counts("foo", c("genus", "family")),
-                throws_error())
-    expect_that(chrom_counts("foo", "foo"), throws_error())
+    expect_error(chrom_counts("foo", c("genus", "family")))
+    expect_error(chrom_counts("foo", "foo"))
 
 })
