@@ -1,5 +1,6 @@
-[![Build Status](https://travis-ci.org/ropensci/chromer.svg?branch=master)](https://travis-ci.org/ropensci/chromer)
-[![Build status](https://ci.appveyor.com/api/projects/status/b1xjatd4i1gx1o6n?svg=true)](https://ci.appveyor.com/project/karthik/chromer)
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/kbroman/chromer/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kbroman/chromer/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
 
 ![chromer logo](https://github.com/ropensci/chromer/raw/master/extra/logo.png)
 

@@ -10,3 +10,4 @@ misc
 ^CONDUCT\.md$
 ^codemeta\.json$
 ^LICENSE\.md$
+^\.github$
