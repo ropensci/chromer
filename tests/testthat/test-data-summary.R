@@ -1,5 +1,3 @@
-source("helper-chromer.R")
-
 context("Testing data processing and summary")
 
 cp <- chrom_counts("Castilleja", "genus")

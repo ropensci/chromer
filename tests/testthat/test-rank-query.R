@@ -1,5 +1,3 @@
-source("helper-chromer.R")
-
 context("Texting rank-based query")
 
 ## Query for genus Lachemilla for testing purposes
