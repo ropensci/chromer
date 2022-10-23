@@ -1,5 +1,4 @@
 ^Makefile$
-^extra$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^CONDUCT\.md$
