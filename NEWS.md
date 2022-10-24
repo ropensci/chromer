@@ -1,7 +1,7 @@
 chromer 0.1.2.9001
 ==================
 
-MINOR CHANGES
+### MINOR CHANGES
 
 * New maintainer, Karl Broman <kbroman.org>
 
@@ -16,6 +16,6 @@ MINOR CHANGES
 chromer 0.1
 ============
 
-NEW FEATURES
+### NEW FEATURES
 
 * Submitted to CRAN
