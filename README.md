@@ -2,7 +2,7 @@
 [![R-CMD-check](https://github.com/kbroman/chromer/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kbroman/chromer/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-# chromer <img alt="chromer logo" src="man/figures/logo.png" height="160px" align="right"/>
+# chromer <img alt="chromer logo" src="man/figures/logo.png" align="right"/>
 
 This package provides programmatic access to the [Chromosome Counts
 Database (CCDB)](http://ccdb.tau.ac.il/home/)
