@@ -14,7 +14,7 @@
 #'
 #' @export summarize_counts
 #'
-#' @examples \donttest{
+#' @examples \dontrun{
 #'
 #' ## Get all counts for genus Castilleja
 #' res <- chrom_counts("Castilleja", "genus")

@@ -38,7 +38,7 @@ Searching for \code{"Solanum acaule"} will return all subspecies and varieties.
 Currently the only acceptable search terms when specifying \code{"majorGroup"} are \code{"Angiosperms"}, \code{"Gymnosperms"}, \code{"Pteridophytes"}, or \code{"Bryophytes"}.
 }
 \examples{
-\donttest{
+\dontrun{
 
 ## Get all counts for genus Castilleja
 chrom_counts("Castilleja", "genus")

@@ -27,7 +27,7 @@
 #'
 #' @export chrom_counts
 #'
-#' @examples \donttest{
+#' @examples \dontrun{
 #'
 #' ## Get all counts for genus Castilleja
 #' chrom_counts("Castilleja", "genus")
