@@ -1,5 +1,6 @@
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/kbroman/chromer/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kbroman/chromer/actions/workflows/R-CMD-check.yaml)
+[![CRAN status](https://www.r-pkg.org/badges/version/chromer)](https://CRAN.R-project.org/package=chromer)
 <!-- badges: end -->
 
 # chromer <img alt="chromer logo" src="man/figures/logo.png" align="right"/>
