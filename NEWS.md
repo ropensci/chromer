@@ -1,4 +1,4 @@
-chromer 0.1.3
+chromer 0.2
 =============
 
 ### MINOR CHANGES
