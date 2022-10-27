@@ -1,10 +1,7 @@
-Makefile
-NEWS
-.travis.yml
-appveyor.yml
-test-all.R
-extra
-misc
+^Makefile$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^CONDUCT\.md$
+^codemeta\.json$
+^LICENSE\.md$
+^\.github$

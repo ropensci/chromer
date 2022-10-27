@@ -11,7 +11,6 @@
 #' @return A \code{data.frame} containing the resolved binomial, the count type (gametophytic or sporophytic), the counts, the inferred gametophytic count (for sporophytic records) and the number of records supporting each count.
 #'
 #' @import dplyr
-#' @importFrom data.table rbindlist
 #'
 #' @export summarize_counts
 #'
@@ -25,13 +24,14 @@
 #'
 #' }
 summarize_counts <- function(counts){
+    resolved_binomial <- NULL # to avoid a Note re global variable in R CMD check
 
     if (!inherits(counts, "chrom.counts"))
         stop("Object must be of class 'chrom.counts' returned from chrom_counts()")
     sp <- unique(counts$resolved_binomial)
-    df <- lapply(sp, function(x) filter_(counts, ~(resolved_binomial == x)))
+    df <- lapply(sp, function(x) filter(tibble::as_tibble(counts), (resolved_binomial == x)))
     ct <- lapply(df, get_counts)
-    tbl_df(rbindlist(ct))
+    tibble::as_tibble(dplyr::bind_rows(ct))
 }
 
 
@@ -40,7 +40,7 @@ get_counts <- function(x){
 
     cnt <- lapply(c("gametophytic", "sporophytic"),
                   function(y) get_counts_n(x,y))
-    df <- data.frame(rbindlist(cnt))
+    df <- data.frame(dplyr::bind_rows(cnt))
     df$resolved_binomial <- unique(x$resolved_binomial)
 
     ## reorder
@@ -49,7 +49,7 @@ get_counts <- function(x){
     df[,ord]
 }
 
-    
+
 ## internal function
 get_counts_n <- function(x, type){
     cln <- parse_counts(x[,type])
@@ -77,10 +77,3 @@ parse_counts <- function(x){
     tmp <- na.omit(as.numeric(unlist(strsplit(unlist(x), "[^0-9]+"))))
     tmp[tmp != 0]
 }
-
-    
-
-    
-    
-
-    

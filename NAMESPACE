@@ -3,7 +3,6 @@
 export(chrom_counts)
 export(summarize_counts)
 import(dplyr)
-importFrom(data.table,rbindlist)
 importFrom(httr,GET)
 importFrom(httr,content)
 importFrom(httr,stop_for_status)

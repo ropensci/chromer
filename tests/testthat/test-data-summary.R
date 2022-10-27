@@ -1,5 +1,3 @@
-source("helper-chromer.R")
-
 context("Testing data processing and summary")
 
 cp <- chrom_counts("Castilleja", "genus")
@@ -12,18 +10,18 @@ get_counts_n <- chromer:::get_counts_n
 test_that("Summary returns correct object", {
 
     expect_that(sum_res, is_a("data.frame"))
-    expect_that(ncol(sum_res), equals(5))
+    expect_equal(ncol(sum_res), 5)
 
     coln <- c("resolved_binomial", "count_type", "count",
               "inferred_n", "num_records")
-    expect_that(colnames(sum_res), equals(coln))
+    expect_equal(colnames(sum_res), coln)
 
     sp_cnt <- unique(cp$resolved_binomial)
     sp_sum <- sum_res$resolved_binomial
-    expect_that(all(sp_sum %in% sp_cnt), is_true())
+    expect_true(all(sp_sum %in% sp_cnt))
 
-    expect_that(all(is.numeric(sum_res$count)), is_true())
-    expect_that(all(is.numeric(sum_res$num_records)), is_true())
+    expect_true(all(is.numeric(sum_res$count)))
+    expect_true(all(is.numeric(sum_res$num_records)))
 
 })
 
@@ -31,21 +29,19 @@ test_that("Summary returns correct object", {
 test_that("Only takes a chrom.counts object", {
 
     tmp <- cp
-    attr(tmp, "class") <- "data.frame" 
-    expect_that(summarize_counts(tmp), throws_error())
+    attr(tmp, "class") <- "data.frame"
+    expect_error(summarize_counts(tmp))
 
 })
 
 test_that("Parsing works properly", {
 
     tmp <- c(1,2,3)
-    expect_that(parse_counts(as.character(tmp)), equals(tmp))
+    expect_equal(parse_counts(as.character(tmp)), tmp)
     tmp2 <- c(0,1,2,3)
-    expect_that(parse_counts(as.character(tmp2)), equals(tmp))
+    expect_equal(parse_counts(as.character(tmp2)), tmp)
 
     tmp3 <- c(1, 2, "3-4", "c.5", "6/7")
-    expect_that(parse_counts(tmp3), equals(seq_len(7)))
+    expect_equal(parse_counts(tmp3), seq_len(7))
 
-    
 })
-
