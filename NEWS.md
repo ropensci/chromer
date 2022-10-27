@@ -3,7 +3,7 @@ chromer 0.3
 
 ### MINOR CHANGES
 
-* New maintainer, Karl Broman <https://kbroman.org>
+* New maintainer, [Karl Broman](https://kbroman.org)
 
 * Changed software license, CC0 -> MIT
 
