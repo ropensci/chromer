@@ -1,8 +1,6 @@
 ### The MIT License (MIT)
 
-Copyright (c) 2022 [Matthew Pennell](https://mwpennell.github.io/),
-[Paula Andrea Martinez](https://twitter.com/orchid00), and [Karl W
-Broman](https://github.com/kbroman)
+Copyright (c) 2022 Matthew Pennell, Paula Andrea Martinez, and Karl W Broman
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

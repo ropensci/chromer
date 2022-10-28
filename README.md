@@ -1,5 +1,6 @@
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/kbroman/chromer/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kbroman/chromer/actions/workflows/R-CMD-check.yaml)
+[![CRAN status](https://www.r-pkg.org/badges/version/chromer)](https://CRAN.R-project.org/package=chromer)
 <!-- badges: end -->
 
 # chromer <img alt="chromer logo" src="man/figures/logo.png" align="right"/>
@@ -98,8 +99,9 @@ summarize_counts(sol_gen)
 ## Meta
 
 * Please [report any issues or bugs](https://github.com/ropensci/chromer/issues).
-* License: [MIT](LICENSE.md)
+* License: [MIT](https://github.com/ropensci/chromer/blob/master/LICENSE.md)
 * Get citation information for `chromer` in R doing `citation(package = "chromer")`
-* Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+* Please note that this project is released with a [Contributor Code of Conduct](https://github.com/ropensci/chromer/blob/master/CONDUCT.md).
+  By participating in this project you agree to abide by its terms.
 
 [![ropensci footer](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)
