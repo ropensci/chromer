@@ -2,18 +2,25 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "identifier": "chromer",
-  "description": "A programmatic interface to the Chromosome Counts Database (<http://ccdb.tau.ac.il/>), Rice et al. (2014) <doi:10.1111/nph.13191>. This package is part of the rOpenSci suite (<https://ropensci.org>).",
+  "description": "A programmatic interface to the Chromosome Counts Database (<http://ccdb.tau.ac.il/>), Rice et al. (2014) <doi:10.1111/nph.13191>. This package is part of the 'ROpenSci' suite (<https://ropensci.org>).",
   "name": "chromer: Interface to Chromosome Counts Database API",
-  "codeRepository": "https://github.com/kbroman/chromer",
-  "issueTracker": "https://github.com/ropensci/chromer/issues/new",
+  "relatedLink": ["https://docs.ropensci.org/chromer/", "https://CRAN.R-project.org/package=chromer"],
+  "codeRepository": "https://github.com/ropensci/chromer",
+  "issueTracker": "https://github.com/ropensci/chromer/issues",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.2",
+  "version": "0.3",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
   "runtimePlatform": "R version 4.2.1 (2022-06-23)",
+  "provider": {
+    "@id": "https://cran.r-project.org",
+    "@type": "Organization",
+    "name": "Comprehensive R Archive Network (CRAN)",
+    "url": "https://cran.r-project.org"
+  },
   "author": [
     {
       "@type": "Person",
@@ -123,9 +130,9 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "39.434KB",
-  "relatedLink": "https://docs.ropensci.org/chromer/",
-  "releaseNotes": "https://github.com/kbroman/chromer/blob/master/NEWS.md",
-  "readme": "https://github.com/kbroman/chromer/blob/master/README.md",
-  "contIntegration": "https://github.com/kbroman/chromer/actions/workflows/R-CMD-check.yaml"
+  "fileSize": "39.683KB",
+  "releaseNotes": "https://github.com/ropensci/chromer/blob/master/NEWS.md",
+  "readme": "https://github.com/ropensci/chromer/blob/master/README.md",
+  "contIntegration": "https://github.com/kbroman/chromer/actions/workflows/R-CMD-check.yaml",
+  "keywords": ["r", "rstats", "r-package"]
 }
