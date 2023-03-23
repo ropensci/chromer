@@ -2,7 +2,8 @@ context("Testing data processing and summary")
 
 test_that("data processing and summary", {
 
-    skip_on_cran()
+    skip_if_offline()    # offline or on CRAN
+    skip_if(ccdb_down()) # ccdb.tau.ac.il is down
 
     cp <- chrom_counts("Castilleja", "genus")
     sum_res <- summarize_counts(cp)

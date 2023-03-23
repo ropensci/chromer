@@ -2,7 +2,8 @@ context("Testing rank-based query")
 
 test_that("Rank-based query", {
 
-    skip_on_cran()
+    skip_if_offline()    # offline or on CRAN
+    skip_if(ccdb_down()) # ccdb.tau.ac.il is down
 
     ## Query for genus Lachemilla for testing purposes
     cp <- chrom_counts(taxa="Lachemilla", rank="genus", full=FALSE)
