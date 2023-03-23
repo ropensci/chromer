@@ -1,3 +1,12 @@
+chromer 0.4
+=============
+
+### Minor changes
+
+* skip the tests on CRAN, so that it doesn't give errors if the
+  API to <http://ccdb.tau.ac.il/> is down.
+
+
 chromer 0.3
 =============
 

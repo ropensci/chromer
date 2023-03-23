@@ -1,14 +1,17 @@
 context("Testing data processing and summary")
 
-cp <- chrom_counts("Castilleja", "genus")
-sum_res <- summarize_counts(cp)
+test_that("data processing and summary", {
 
-parse_counts <- chromer:::parse_counts
-get_counts_n <- chromer:::get_counts_n
+    skip_on_cran()
+
+    cp <- chrom_counts("Castilleja", "genus")
+    sum_res <- summarize_counts(cp)
+
+    parse_counts <- chromer:::parse_counts
+    get_counts_n <- chromer:::get_counts_n
 
 
-test_that("Summary returns correct object", {
-
+    # Summary returns correct object"
     expect_that(sum_res, is_a("data.frame"))
     expect_equal(ncol(sum_res), 5)
 
@@ -23,19 +26,17 @@ test_that("Summary returns correct object", {
     expect_true(all(is.numeric(sum_res$count)))
     expect_true(all(is.numeric(sum_res$num_records)))
 
-})
+    ##############################
 
 
-test_that("Only takes a chrom.counts object", {
-
+    # Only takes a chrom.counts object
     tmp <- cp
     attr(tmp, "class") <- "data.frame"
     expect_error(summarize_counts(tmp))
 
-})
+    ##############################
 
-test_that("Parsing works properly", {
-
+    # Parsing works properly
     tmp <- c(1,2,3)
     expect_equal(parse_counts(as.character(tmp)), tmp)
     tmp2 <- c(0,1,2,3)
