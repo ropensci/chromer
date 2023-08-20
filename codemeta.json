@@ -8,13 +8,13 @@
   "codeRepository": "https://github.com/ropensci/chromer",
   "issueTracker": "https://github.com/ropensci/chromer/issues",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.3",
+  "version": "0.5",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.2.1 (2022-06-23)",
+  "runtimePlatform": "R version 4.3.1 (2023-06-16)",
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
@@ -130,9 +130,9 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "39.683KB",
+  "fileSize": "40.805KB",
   "releaseNotes": "https://github.com/ropensci/chromer/blob/master/NEWS.md",
   "readme": "https://github.com/ropensci/chromer/blob/master/README.md",
-  "contIntegration": "https://github.com/kbroman/chromer/actions/workflows/R-CMD-check.yaml",
+  "contIntegration": "https://github.com/ropensci/chromer/actions/workflows/R-CMD-check.yaml",
   "keywords": ["r", "rstats", "r-package"]
 }

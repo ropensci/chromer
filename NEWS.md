@@ -1,3 +1,11 @@
+chromer 0.5
+=============
+
+### Minor changes
+
+* Tiny change to documentation to avoid a problem on CRAN. (Issue #38)
+
+
 chromer 0.4
 =============
 
