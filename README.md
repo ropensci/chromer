@@ -6,16 +6,16 @@
 # chromer <img alt="chromer logo" src="man/figures/logo.png" align="right"/>
 
 This package provides programmatic access to the [Chromosome Counts
-Database (CCDB)](http://ccdb.tau.ac.il/home/)
-[API](http://ccdb.tau.ac.il/services/). The CCDB is a community
+Database (CCDB)](https://ccdb.tau.ac.il/home/)
+[API](https://ccdb.tau.ac.il/services/). The CCDB is a community
 resource for plant chromosome numbers. For more details on the
 database, see the associated publication by Rice et al. (2014)
 <doi:10.1111/nph.13191> in *New Phytologist*.
 
 This package is maintained by [Karl Broman](https://kbroman.org) and
 was formerly maintained by [Paula Andrea
-Martinez](https://twitter.com/orchid00) and [Matthew
-Pennell](https://mwpennell.github.io/), none of whom are affiliated
+Martinez](https://github.com/orchid00) and [Matthew
+Pennell](https://github.com/mwpennell), none of whom are affiliated
 with the CCDB group. The URL for Chromer docs is
 <https://docs.ropensci.org/chromer/>.
 
