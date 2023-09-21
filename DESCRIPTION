@@ -1,7 +1,7 @@
 Package: chromer
 Title: Interface to Chromosome Counts Database API
 Version: 0.6
-Date: 2023-08-22
+Date: 2023-09-21
 Authors@R: c(
     person("Matthew", "Pennell", role = "aut", email = "mwpennell@gmail.com",
            comment = c(ORCID = "0000-0002-2886-3970")),
