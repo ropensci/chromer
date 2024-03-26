@@ -6,8 +6,8 @@
 # chromer <img alt="chromer logo" src="man/figures/logo.png" align="right"/>
 
 This package provides programmatic access to the [Chromosome Counts
-Database (CCDB)](https://ccdb.tau.ac.il/home/)
-[API](https://ccdb.tau.ac.il/services/). The CCDB is a community
+Database (CCDB)](https://taux.evolseq.net/CCDB_web)
+[API](https://taux.evolseq.net/CCDB_web/services/). The CCDB is a community
 resource for plant chromosome numbers. For more details on the
 database, see the associated publication by Rice et al. (2014)
 <doi:10.1111/nph.13191> in *New Phytologist*.

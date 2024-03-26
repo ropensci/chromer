@@ -1,7 +1,7 @@
 Package: chromer
 Title: Interface to Chromosome Counts Database API
-Version: 0.6
-Date: 2023-09-21
+Version: 0.7-1
+Date: 2024-03-26
 Authors@R: c(
     person("Matthew", "Pennell", role = "aut", email = "mwpennell@gmail.com",
            comment = c(ORCID = "0000-0002-2886-3970")),
@@ -11,7 +11,7 @@ Authors@R: c(
            comment=c(ORCID = "0000-0002-4914-6671"))
   )
 Description: A programmatic interface to the Chromosome Counts Database
-    (<https://ccdb.tau.ac.il/>), Rice et al. (2014) <doi:10.1111/nph.13191>.
+    (<https://taux.evolseq.net/CCDB_web/>), Rice et al. (2014) <doi:10.1111/nph.13191>.
     This package is part of the 'ROpenSci' suite (<https://ropensci.org>).
 Depends:
     R (>= 2.15)
