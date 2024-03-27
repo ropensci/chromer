@@ -1,3 +1,11 @@
+chromer 0.8
+===========
+
+### Minor changes
+
+* API has moved to a new site, <https://taux.evolseq.net/CCDB_web/services/>
+
+
 chromer 0.6
 =============
 
@@ -20,7 +28,7 @@ chromer 0.4
 ### Minor changes
 
 * Skip the tests on CRAN, so that it doesn't give errors if the
-  API to <https://ccdb.tau.ac.il/> is down.
+  API is down.
 
 * Added internal function to check if CCDB is down, and skip the tests
   when that's true.

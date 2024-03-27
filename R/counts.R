@@ -68,7 +68,7 @@ chrom_counts_single <- function(taxa, rank, out, foptions){
     if (rank == "species")
         taxa <- species_API(taxa)
 
-    url <- paste0("https://ccdb.tau.ac.il/services/",
+    url <- paste0("https://taux.evolseq.net/CCDB_web/services/",
                   out,"/?", rank,"=",taxa,"&format=","json")
     counts_call <- GET(url, foptions)
     stop_for_status(counts_call)
