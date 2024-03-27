@@ -1,5 +1,5 @@
-chromer 0.7-1
-=============
+chromer 0.8
+===========
 
 ### Minor changes
 

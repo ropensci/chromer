@@ -1,6 +1,6 @@
 Package: chromer
 Title: Interface to Chromosome Counts Database API
-Version: 0.7-1
+Version: 0.8
 Date: 2024-03-26
 Authors@R: c(
     person("Matthew", "Pennell", role = "aut", email = "mwpennell@gmail.com",
@@ -26,5 +26,5 @@ Suggests:
 URL: https://docs.ropensci.org/chromer/, https://github.com/ropensci/chromer
 BugReports: https://github.com/ropensci/chromer/issues
 License: MIT + file LICENSE
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
 Encoding: UTF-8
